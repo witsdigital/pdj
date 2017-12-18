@@ -1,0 +1,21 @@
+
+<ion-header>
+  <ion-toolbar color="homeheader">
+    <ion-buttons start>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>Orçamentos{{index}}</ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content >
+  <ion-list inset>
+    <button ion-item (click)="viewOrc(item)" *ngFor="let item of orcs, let i = index;">
+<h2><span class="tit">Orçamento nº: {{item.id_orcamento}}</span> <span class="titleservice"> </span></h2>
+  </button>
+  </ion-list>
+</ion-content>

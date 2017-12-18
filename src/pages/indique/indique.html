@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+
+    <ion-title>Seja vendedor</ion-title>
+    <ion-buttons end>
+      <button (click)="close()" ion-button icon-only color="royal">
+        Fechar <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content class="indica" padding>
+
+  <ion-item>
+    <ion-label  floating [ngClass]="{'errovalid': !name.valid || (name.dirty || name.touched),'valid': name.valid }">Nome *</ion-label>
+    <ion-input  [(ngModel)]="cadastro.nome"  #name="ngModel" type="text" required></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label  floating [ngClass]="{'errovalid': !endereco.valid || (endereco.dirty || endereco.touched),'valid': endereco.valid }">Endereço *</ion-label>
+    <ion-input  [(ngModel)]="cadastro.endereco"  #endereco="ngModel" type="text" required></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label  floating [ngClass]="{'errovalid': !bairro.valid || (bairro.dirty || bairro.touched),'valid': bairro.valid }">Bairro *</ion-label>
+    <ion-input  [(ngModel)]="cadastro.bairro"  #bairro="ngModel" type="text" required></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label  floating [ngClass]="{'errovalid': !telefone.valid || (telefone.dirty || telefone.touched),'valid': telefone.valid }">Telefone *</ion-label>
+    <ion-input  [(ngModel)]="cadastro.telefone"  #telefone="ngModel" type="text" required></ion-input>
+  </ion-item>
+
+<div class="" align="center">
+  <button class="buttonindique"  ion-button color="secondary" [disabled]=" name.invalid||endereco.invalid || bairro.invalid || telefone.invalid"  (click)="salvar(cadastro)"   >Indicar</button>
+
+</div>
+
+</ion-content>

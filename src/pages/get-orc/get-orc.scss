@@ -1,0 +1,177 @@
+page-get-orc {
+  .item{
+    color: #467a9e;
+  }
+
+  .statuspend{
+    color: #e2a500;
+    font-weight: bold;
+    font-size: 13px;
+  }
+  .statusok{
+    color: #00b5e2;
+    font-weight: bold;
+    font-size: 13px;
+  }
+  .titgetorc{
+    font-size: 20px;
+    padding: 10px;
+    font-weight: bold;
+    color: #959595;
+  }
+  .segments{
+    padding: 5px;
+  }
+  .destaquecat{
+    width: 70%;
+    margin-top: 5px;
+  }
+  .like{
+    position: absolute;
+    left: 77%;
+  }
+  .detalhescols{
+    font-size: 12px;
+  }
+  .card-md{
+    margin: 0px;
+    margin-top: 10px;
+    width: 100%;
+
+  }
+
+  ul {
+
+    padding: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+
+    &.rating li {
+
+      padding: 0px 0px !important;
+      background: none;
+      color: #ffb400;
+
+      ion-icon {
+        font-size: 17px;
+      }
+    }
+  }
+
+  .statusaccept{
+    color:green;
+  }
+  .totalaval{
+    font-size: 10px;
+  }
+  .star{
+    padding: 1px;
+    font-size: 15px;
+    color: #e9cc07;
+  }
+  .listaccept{
+    background-color: #ccc;
+    height: 20px;
+
+  }
+  .titulolist{
+    font-size: 15px;
+    font-weight: bold;
+  }
+  .cardrad{
+    background-color: #f7f7f7;
+  }
+  .tit{
+    color: #00b5e2;
+    font-weight: bold;
+    font-size: 13px;
+
+  }
+  .spiiner{
+    text-align: center;
+    position: absolute;
+    left: 40%;
+    font-size: 50px;
+    top: 50px;
+  }
+
+  ion-spinner * {
+    width: 30px;
+    height: 30px;
+    stroke: #444;
+    fill: #222;
+    position: absolute;
+    left: 40%;
+    align-items: center;
+  }
+  .footercard{
+    background-color: #52529f;
+    border-radius: 30px 30px 0px 0px;
+    width: 500px;
+    height: -50px;
+    .icon{
+      color: #fff;
+      font-size: 20px;
+    }
+    div{
+      font-size: 17px;
+      color: #FFF;
+    }
+  }
+  .footercardaccept{
+    background-color: #11b711;
+    border-radius: 30px 30px 0px 0px;
+    width: 500px;
+    height: -50px;
+    .icon{
+      color: #fff;
+      font-size: 20px;
+    }
+    div{
+      font-size: 17px;
+      color: #FFF;
+    }
+  }
+  .footercardsolics{
+    background-color: #c5a200;
+    width: 500px;
+    height: -50px;
+    .icon{
+      color: #fff;
+      font-size: 20px;
+    }
+    div{
+      font-size: 17px;
+      color: #FFF;
+    }
+  }
+  .footercardsol{
+    background-color: #014c6b;
+
+    width: 500px;
+    height: -50px;
+    div{
+      color: #FFF;
+    }
+  }
+  .tituloservice{
+    white-space: normal;
+    font-size: 15px;
+    color: #52529f;
+  }
+  .tituloservicesol{
+    white-space: normal;
+    color: #014c6b;
+    font-weight: bold;
+    font-size: 14px;
+  }
+  .datecard{
+    p{
+      margin-top: 1px;
+      color: #0b72c9;
+      text-align: center;
+      font-size: 11px;
+    }
+  }
+
+}

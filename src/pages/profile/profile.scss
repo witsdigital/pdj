@@ -1,0 +1,222 @@
+page-profile {
+  ion-card {
+    position: relative;
+    text-align: center;
+    height: 40%;
+  }
+  ul {
+  padding: 0px;
+  margin-top: -25px;
+
+  &.rating li {
+    padding: 10px 1px !important;
+    background: none;
+    color: #ffb400;
+
+
+    ion-icon {
+      font-size: 30px;
+    }
+  }
+}
+.starreput{
+  position: relative;
+  margin-top: 20%;
+  margin-left: 20px;
+
+
+}
+.starreputtit{
+  position: absolute;
+    margin-left: 9%;
+    margin-top: 8%;
+  color:#FFF;
+
+
+
+}
+
+.bteditimg{
+
+  position: absolute;
+  font-weight: bold;
+font-size: 18px;
+  margin-left: 70%;
+top: 30%;
+color:#ccc;
+  z-index: 99999;
+}
+.circle {
+  background-color: #aaa;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  overflow: hidden;
+  position: absolute;
+  top: 10%;
+  left: 60%;
+}
+
+.circle img {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+.resultrep{
+  color: #fff;
+  font-weight: bold;
+  margin-left: 9%;
+  margin-top: 8%;
+}
+.infoprofile{
+  padding: 30px 0px 0px 30px;
+  color: #fff;
+}
+.imgprofile{
+  position: absolute;
+  top: 10%;
+  left: 60%;
+
+}
+.headerprof{
+  p{
+    margin-top: -10px;
+    font-size: 11px;
+  }
+  background-color: red;
+  height: 40%;
+      background-image: url('../assets/bgprof.png');
+}
+  .topcard{
+
+    margin-top: 10%;
+    margin-bottom: 10%;
+  }
+  .content{
+    background-color: #ededed;
+  }
+  .boxinfo{
+    border-radius: 10px;
+    margin-top: 10px;
+  }
+  .item {
+    background: none;
+  }
+
+  .titulototal{
+  font-size: 11px;
+    text-align: center;
+    color: #FFF;
+
+  }
+  .item{
+    .p{  font-weight: bold;
+          color: #0b6384;
+    }
+    .icon{
+      color: red;
+    }
+
+  }
+
+  .card{
+
+    margin: 0 0 0 0;
+    border-radius: 2px;
+    width: 100%;
+    font-size: 1.4rem;
+    background: #ededed;
+
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0);
+}
+  .list a.item{
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  border-bottom: 0px;
+  }
+
+  .boxcont{
+
+    background-color: #13407d;
+  //  border: 1px solid red;
+
+  }
+  .boxcont2{
+
+    background-color: #38be10;
+  //  border: 1px solid red;
+
+  }
+
+  .boxcont3{
+
+    background-color: #13407d;
+  //  border: 1px solid red;
+
+  }
+  .tituloreput{
+    font-weight: bold;
+    margin-top: 20px;
+    text-align: center;
+    font-size: 20px;
+    color: #ff7200;
+
+  }
+  .star{
+    padding: 1px;
+    color: #e9cc07;
+  }
+  .reputacao{
+    margin-top: -10px;
+    font-size: 30px;
+    color: #4c9014;
+        font-weight: bold;
+    text-align: center;
+  }
+  .numtotal{
+    color: #FFF;
+    font-weight: bold;
+    text-align: center;
+    font-size: 25px;
+
+  }
+  .editar{
+    position: absolute;
+    right: 20px;
+    top: 20px;
+      font-weight: bold;
+      font-size: 18px;
+      color: #0980ef;
+
+  }
+
+
+  .destaquecat{
+    border-radius:50%;
+      width: 35%;
+      margin-top: 10px;
+
+  }
+  .card-title{
+      font-weight: bold;
+      font-size: 20px;
+      color: #605f5d;
+
+  }
+  .estrelas{
+    margin-top: -10px;
+    font-size: 30px;
+  }
+  .estrelas input[type=radio] {
+  display: none;
+}
+.estrelas label i.fa:before {
+  content:'\f005';
+  color: #FC0;
+}
+.estrelas input[type=radio]:checked ~ label i.fa:before {
+  color: #CCC;
+}
+
+}

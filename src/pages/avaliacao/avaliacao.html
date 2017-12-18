@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar color="primary">
+
+    <ion-title>Avaliação</ion-title>
+    <ion-buttons end>
+      <button (click)="close()" ion-button icon-only color="royal">
+        Fechar <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+
+<ion-content padding>
+  <div class="" align="center">
+    <rating [(ngModel)]="rate"
+            readOnly="false"
+            max="5"
+            emptyStarIconName="star-outline"
+            halfStarIconName="star-half"
+            starIconName="star"
+            nullable="true"
+            (ngModelChange)="avaliar($event)"></rating>
+  </div>
+
+</ion-content>

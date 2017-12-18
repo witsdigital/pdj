@@ -1,0 +1,7 @@
+﻿platforms/
+.dropbox
+.vscode
+.editorconfig
+gitignore
+www/
+src/providers/service

@@ -1,0 +1,90 @@
+
+<ion-content >
+  <ion-refresher (ionRefresh)="test()">
+     <ion-refresher-content></ion-refresher-content>
+   </ion-refresher>
+  <ion-icon class="iconclose" (click)="close()" name="close-circle"></ion-icon>
+<div class="" *ngFor="let item of dadosUser">
+  <ion-card class="headerprofornec card-background-page">
+
+    <ion-row class="">
+      <ion-col col-4>
+  <img  class="destaquecat" src="assets/avatar.jpg" alt="">
+      </ion-col>
+      <ion-col col- class="boxidados">
+        <div class="card-title">{{item.nome}}</div>
+        <div class="card-subtitle">{{item.email}}</div>
+      </ion-col>
+      <rating class="starsreput" [(ngModel)]="rate"
+              readOnly="false"
+              max="5"
+              emptyStarIconName="star-outline"
+              halfStarIconName="star-half"
+              starIconName="star"
+              nullable="true"
+              (ngModelChange)="avaliar($event)"></rating>
+    </ion-row>
+
+  </ion-card>
+
+<div class="boxicons">
+  <ion-row class="iconsbox">
+    <ion-col col-4>
+            <img (click)="cal(item.telefone)"  class="iconperfforn" src="assets/phone.png" alt="">
+            <p class="textinfobuttons">Ligue agora</p>
+    </ion-col >
+    <ion-col col-4>
+      <img  class="iconperfforn" src="assets/mail.png" alt="">
+          <p class="textinfobuttons">Envie Email</p>
+
+    </ion-col >
+    <ion-col col-4>
+      <img (click)="openMap(item)" class="iconperfforn" src="assets/map.png" alt="">
+    <p class="textinfobuttons">Como chegar</p>
+    </ion-col >
+  </ion-row>
+
+</div>
+
+<ion-card>
+
+  <ion-item>
+
+    <h2>Serviço Solicitado:</h2>
+    <p>{{fn.nome}}</p>
+  </ion-item>
+
+  <ion-item>
+
+    <h2>Descrição:</h2>
+    <p>{{fn.observacao}}</p>
+  </ion-item>
+
+  <ion-item>
+
+    <h2>Valor:</h2>
+    <p>{{fn.valor}}</p>
+  </ion-item>
+
+  <ion-item>
+
+    <h2>Data:</h2>
+    <p>{{fn.data | date: 'dd/MM/yyyy'}}</p>
+  </ion-item>
+
+
+</ion-card>
+
+<button (click)="ava(fn)" ion-item>
+  <ion-icon name="ios-star-half-outline" item-start></ion-icon>
+<p>Avaliar</p>
+</button>
+
+<button (click)="ava()" ion-item>
+  <ion-icon name="ios-send-outline" item-start></ion-icon>
+<p>Relatar Problema</p>
+</button>
+
+
+</div>
+</ion-content>

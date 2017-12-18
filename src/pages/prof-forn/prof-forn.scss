@@ -1,0 +1,132 @@
+page-prof-forn {
+
+
+  .titulototal{
+    font-weight: bold;
+    text-align: center;
+    color: #FFF;
+
+  }
+  .iconclose{
+    font-size: 40px;
+    position: absolute;
+    z-index: 9999;
+    left: 85%;
+    top:5%;
+    color: #fff;
+  }
+  .item{
+    .p{  font-weight: bold;
+          color: #0b6384;
+    }
+    .icon{
+      color: red;
+    }
+
+  }
+  .boxicons{
+    margin-top: 5%;
+  }
+
+  .card{
+  height:50% !important;
+    margin: 0 0 0 0;
+    border-radius: 2px;
+    width: 100%;
+    font-size: 1.4rem;
+    background: #ededed;
+
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0);
+}
+  .list a.item{
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  border-bottom: 0px;
+  }
+
+
+  .reputacao{
+    margin-top: -10px;
+    font-size: 30px;
+    color: #4c9014;
+        font-weight: bold;
+    text-align: center;
+  }
+  .numtotal{
+    color: #FFF;
+    font-weight: bold;
+    text-align: center;
+    font-size: 25px;
+
+  }
+
+  .iconperfforn{
+        background-color: red;
+
+
+    padding: 20%;
+
+    color: #ccc;
+    border-radius: 0px;
+
+  }
+  .iconsbox{
+    padding: 0px 20px 20px 20px;
+    margin-top: -10px;
+  }
+  .card-title{
+    font-weight: bold;
+    font-size: 20px;
+  }
+  .starsreput{
+    margin-top:-15%;
+margin-left: 33%;
+  }
+  ul {
+    text-align: center;
+  padding: 0px;
+
+  &.rating li {
+    padding: 10px 1px !important;
+    background: none;
+    color: #ffb400;
+
+
+    ion-icon {
+      font-size: 30px;
+    }
+  }
+}
+.boxidados{
+  position: relative;
+  margin-top: 7%;
+
+  color: #fff;
+}
+.headerprofornec{
+  .row{
+      margin-top: 50px;
+  }
+
+        background-image: url('../assets/bgprof.png');
+  height:100px;
+}
+
+.textinfobuttons{
+  text-align: center;
+  font-size: 12px;
+  margin-top: -1%;
+  color: red;
+}
+
+  .destaquecat{
+    border-radius:50%;
+      width: 100%;
+      margin-top: 10px;
+
+  }
+
+
+
+}

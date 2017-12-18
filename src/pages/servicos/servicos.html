@@ -1,0 +1,28 @@
+
+
+
+
+<ion-header>
+  <ion-toolbar color="serviceheader">
+    <ion-buttons start>
+
+    </ion-buttons>
+    <ion-title>{{cat.nome}}</ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content >
+  <img class="imgcat" src="{{cat.urlimg}}" alt="">
+<span class="desccat1"><span class="">+{{totalcats}}</span><br><span>Categorias</span></span>
+<span class="desccat2"><span class="">+{{totalprestador}}</span><br><span>Profissionais</span></span>
+  <ion-list inset>
+
+          <ion-spinner class="spiiner" name="crescent" *ngIf="!cats || !totalcats  "></ion-spinner>
+  <button ion-item *ngFor="let item of cats" (click)="requestService(item)">
+  <span class="itemlist">  {{ item.nome }}</span>
+  </button>
+</ion-list>
+
+</ion-content>

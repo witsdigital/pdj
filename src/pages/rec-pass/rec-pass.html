@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar color="orangeespec">
+
+    <ion-title>Recuperar Senha</ion-title>
+    <ion-buttons end>
+      <button (click)="close()" ion-button icon-only color="royal">
+        Fechar <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-item>
+    <ion-label  floating [ngClass]="{'errovalid': !email.valid,'valid': email.valid }">Email *</ion-label>
+    <ion-input class="imput"  [(ngModel)]="cadastro.email"  #email="ngModel" type="email" email required></ion-input>
+  </ion-item>
+
+  <button  ion-button color="secondary" [disabled]="email.invalid" block (click)="salvar(cadastro)"   >Recuperar minha conta</button>
+
+</ion-content>

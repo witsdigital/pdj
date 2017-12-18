@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-toolbar color="primary">
+
+    <ion-title>Seu Carrinho</ion-title>
+    <ion-buttons end>
+      <button (click)="close()" ion-button icon-only color="royal">
+        Fechar <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content >
+
+  <ion-list class="bodyprod" >
+
+    <ion-grid *ngFor="let car of carttemp" no-lines class="animated bounceInLeft">
+      <ion-row>
+        <p>    {{car.name}}</p>
+      </ion-row>
+
+
+      <ion-row class="bgpd">
+        <ion-col col-4>
+        <span class="displaypd">  Quantidade</span>
+        </ion-col>
+        <ion-col col-4>
+          <span class="displaypd">  Valor</span>
+        </ion-col>
+        <ion-col col-4>
+    <span class="displaypd">  Ação</span>
+        </ion-col>
+      </ion-row>
+      <ion-row >
+
+        <ion-col col-5>
+          <ion-item>
+
+            <ion-icon class="btadd" (click)="rmqtd(car)" color="secondary" name="remove-circle"></ion-icon>
+        <span class="textinput">{{car.qtd}}</span>
+            <ion-icon class="btrm" (click)="addqtd(car)" color="secondary" name="add-circle"></ion-icon>
+          </ion-item>
+        </ion-col>
+        <ion-col col-5>
+          <ion-item>
+
+            <ion-input class="textinput" type="text" [(ngModel)]="car.price"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col col-2>
+                  <button ion-button class="animated zoomIn" color="danger" (click)="rmcart(car)" clear><ion-icon class="icontrash" name="trash"></ion-icon></button>
+        </ion-col>
+      </ion-row>
+
+    </ion-grid>
+
+  </ion-list>
+
+</ion-content>

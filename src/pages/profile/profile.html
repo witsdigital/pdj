@@ -1,0 +1,82 @@
+
+
+<ion-header>
+
+</ion-header>
+<ion-content class="content"  >
+      <p (click)="editarimg()" class="bteditimg">Editar</p>
+  <div class="headerprof">
+
+  <div class="infoprofile">
+    <h2>{{dadosUser[0].nome}}</h2>
+    <p>{{dadosUser[0].email}}</p>
+
+  </div>
+
+  <div class="circle">
+    <img *ngIf="!imglist[0]"  src="{{dadosUser[0].img}}" alt="">
+    <img *ngIf="imglist[0]"  class=""  src="{{base64Image}}" alt="">
+  </div>
+
+    <div class="starreputtit">
+<p>Reputação</p>
+
+
+    </div>
+    <div class="starreput">
+      <rating [(ngModel)]="rate"
+              readOnly="true"
+              max="5" emptyStarIconName="star-outline"
+              halfStarIconName="star-half"
+              starIconName="star"
+              nullable="true"  >
+            </rating>
+
+    </div>
+    <p *ngIf="rate>4 && rate<5" class="resultrep">Ótima</p>
+    <p *ngIf="rate>3 && rate<4" class="resultrep">Boa</p>
+    <p *ngIf="rate>2 && rate<3" class="resultrep">Regular</p>
+    <p *ngIf="rate>0 && rate<2" class="resultrep">Ruim</p>
+    <p *ngIf="rate==0" class="resultrep">Novo</p>
+
+  </div>
+<ion-row class="boxinfo" >
+<ion-col class="boxcont" col-4>
+<p class="titulototal"> Pendentes</p>
+  <p class="numtotal">{{orcs}}</p>
+</ion-col>
+<ion-col class="boxcont2" col-4>
+<p class="titulototal"> Concluído</p>
+  <p class="numtotal">{{accepts}}</p>
+</ion-col>
+<ion-col col-4 class="boxcont3">
+  <p class="titulototal"> Solicitados</p>
+<p class="numtotal">{{countpend}}</p>
+</ion-col>
+</ion-row>
+
+<button (click)="share()" ion-item>
+  <ion-icon name="ios-share-outline" item-start></ion-icon>
+<p>Compartilhar</p>
+</button>
+
+<button (click)="updatePass()" ion-item>
+  <ion-icon name="ios-unlock-outline"  item-start></ion-icon>
+<p>Alterar Senha</p>
+</button>
+
+<button ion-item>
+  <ion-icon name="ios-bookmarks-outline" item-start></ion-icon>
+<p>Como funciona</p>
+</button>
+
+<button ion-item>
+  <ion-icon name="ios-help-circle-outline" item-start></ion-icon>
+<p>Ajuda</p>
+</button>
+
+<button (click)="exit()" ion-item>
+  <ion-icon name="ios-exit-outline" item-start></ion-icon>
+<p>Sair</p>
+</button>
+</ion-content>

@@ -1,0 +1,31 @@
+
+
+
+<ion-content class="login" >
+  <div align="center" class="">
+    <img class="logo" src="assets/logo.png" alt="">
+
+  </div>
+<div align="center" class="boxinput">
+  <ion-input class="imput" type="text" [(ngModel)]="userData.login" placeholder="Login" name="login"  required></ion-input>
+  <ion-input class="imput" type="password" [(ngModel)]="userData.senha" placeholder="Senha" name="senha"  required></ion-input>
+<button (click)="lg(userData)" ion-button color="light" outline>ENTRAR</button>
+</div>
+
+
+<br>
+<div align="center" class="">
+    <span class="newaccount" (click)="cadUser()">Ainda não tem cadastro? faça agora! </span>
+
+</div>
+<br>
+<div align="center" class="">
+    <span class="recsenha" (click)="recSenha()">Esqueceu sua senha? </span>
+
+</div>
+
+
+
+
+
+</ion-content>

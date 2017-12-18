@@ -1,0 +1,64 @@
+page-view-orc {
+  .tituloreput{
+    font-weight: bold;
+
+    text-align: center;
+    font-size: 20px;
+    color: #ff7200;
+
+  }
+  .star{
+
+    color: #e9cc07;
+  }
+
+  .ticket{
+    margin-top: 5%;
+    padding: 5%;
+    background-color: #f3f9c4;
+    box-shadow: 0px 0px;
+
+
+  }
+  hr {
+    border-style: dotted;
+        border-bottom-width: 1px;
+        border-top-width: 0;
+        border-right-width: 0;
+        border-left-width: 0;
+}
+  .titdiv{
+    font-size: 12px;
+  }
+  .valor{
+    font-size: 20px;
+  }
+  .titvalor{
+    font-size: 14px;
+        font-weight: bold;
+
+  }
+  .bgviewvenda{
+  background-image: url("/assets/bg2.png");
+  }
+  .imgticket{
+    padding: 10px;
+    margin-top: -25px;
+
+  }
+  .reputacao{
+
+    font-size: 30px;
+    text-align: center;
+    padding: 1px;
+  }
+  .titorc{
+    color: #0c7097;
+        font-weight: bold;
+
+  }
+  .titorcsub{
+        color: #ff7200;
+
+  }
+}

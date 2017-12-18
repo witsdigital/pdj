@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-toolbar color="orangeespec">
+
+    <ion-title>Dados do orçamento</ion-title>
+    <ion-buttons end>
+      <button (click)="close()" ion-button icon-only color="royal">
+        Fechar <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content  class="bgviewvenda" >
+
+  <ion-item-group  >
+     <ion-item-divider color="light"><span class="titdiv">Serviço</span></ion-item-divider>
+     <ion-item>    <h4 class="titorcsub"> {{orc.nome}}</h4></ion-item>
+     <ion-item-divider color="light"><span class="titdiv">Descrição</span></ion-item-divider>
+
+          <ion-item> <p  class="titorcsub">{{orc.descricao}}</p></ion-item>
+          <ion-item-divider color="light">Orçamento do fornecedor</ion-item-divider>
+
+     <ion-card  class="ticket">
+
+
+
+     <ion-card-content>
+        <span class="titvalor">Total: </span><br>
+        <span class="valor">{{orc.valor | currency:'BRL':true:'1.2-2'}}</span>
+        <hr>
+
+        <span class="titvalor">Forma de pagamento aceita: </span><br>
+        <span class="valor">TODAS</span>
+        <hr>
+        <p class="tituloreput">Reputação como vendedor</p>
+        <p class="reputacao">
+          <ion-icon class="star" name="star"></ion-icon>
+        <ion-icon class="star" name="star"></ion-icon>
+        <ion-icon class="star" name="star"></ion-icon>
+        <ion-icon class="star" name="star"></ion-icon>
+        <ion-icon class="star" name="star"></ion-icon></p>
+
+     </ion-card-content>
+
+
+     </ion-card>
+   </ion-item-group>
+
+  <img class="imgticket"  src="assets/ticket.png" alt="">
+
+<ion-row>
+  <ion-col col-8>
+    <button color="homeheader" ion-button full (click)="acc(orc)">Aceitar</button>
+
+  </ion-col>
+  <ion-col col-4>
+    <button color="orangeespec" ion-button (click)="close()" full>Fechar</button>
+
+  </ion-col>
+</ion-row>
+</ion-content>

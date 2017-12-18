@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-toolbar color="primary">
+
+    <ion-title>Novo Orçamento</ion-title>
+    <ion-buttons end>
+      <button (click)="close()" ion-button icon-only color="royal">
+        Fechar <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content >
+  <ion-item-group>
+    <ion-item-divider color="light" style="background-color:#EBEBEB"><span style="color:#4C959F">Descrição</span></ion-item-divider>
+
+    <ion-item>
+      <ion-textarea name="comment" [(ngModel)]="cadastro.descricao" rows="4" placeholder="Descreva o que você precisa"></ion-textarea></ion-item>
+      <ion-item>  <span class="descservice">EX: Fazer uma manutenção em um computador da empresa</span></ion-item>
+
+    <ion-item-divider color="light" style="background-color:#EBEBEB"><span style="color:#4C959F">Data da execução</span></ion-item-divider>
+    <ion-item>
+  <ion-label>Selecione uma data</ion-label>
+  <ion-select [(ngModel)]="cadastro.dataexecut" interface="action-sheet">
+    <ion-option value="1">Hoje</ion-option>
+    <ion-option value="2">Esta semana</ion-option>
+    <ion-option value="3">Semana que vem</ion-option>
+    <ion-option value="4">Este mês</ion-option>
+    <ion-option value="0">Não sei direito</ion-option>
+
+  </ion-select>
+
+</ion-item>
+    </ion-item-group>
+<br>
+<ion-item-divider color="light" style="background-color:#EBEBEB"><span style="color:#4C959F">Fotos ( max 3)</span></ion-item-divider>
+<br>
+    <ion-row>
+      <ion-col *ngIf="imglist.length<3" col-4>
+         <img   (click)="presentActionSheet()"  class="destaquecat"  src="assets/addfoto.png" alt="">
+      </ion-col >
+      <ion-col *ngFor="let item of imglist" col-4>
+         <ion-icon (click)="closePhoto(item)" class="iconclose" name="ios-close-circle"></ion-icon>
+ <img class="imgpdido" src="{{item}}"/>
+      </ion-col>
+    </ion-row>
+
+
+
+
+
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+<button ion-button block color="secondary" [disabled]="!cadastro.descricao ||!cadastro.dataexecut "  (click)="cadOrc(cadastro)">Solicitar orçamento</button>
+  </ion-toolbar>
+</ion-footer>

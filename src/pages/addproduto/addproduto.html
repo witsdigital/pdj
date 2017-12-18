@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar color="primary">
+
+    <ion-title>Add produtos</ion-title>
+    <ion-buttons end>
+      <button (click)="close()" ion-button icon-only color="royal">
+        Fechar <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+
+<ion-content class="bodycart" >
+
+  <ion-searchbar placeholder="Procurar" (ionInput)="getItems($event)"></ion-searchbar>
+  <ion-list  >
+    <ion-item (click)="itemSelected(item)"   *ngFor="let item of items">
+      <span class="listFatura">  {{ item.name  }}</span>
+    </ion-item>
+  </ion-list>
+
+</ion-content>
+<ion-footer class="footercart">
+  <ion-grid>
+    <ion-row>
+      <ion-col  col-4 class='animated zoomIn'>Total: <br> <b>{{totalcompra | currency:'BRL':true:'1.2-2'}}</b></ion-col>
+      <ion-col col-8><button (click)="confirma()" ion-button full >Adicionar ao carrinho</button></ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+</ion-footer>

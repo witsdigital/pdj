@@ -1,0 +1,37 @@
+page-cad-user {
+
+  .buttons{
+    padding: 10%;
+  }
+
+  .inputerror{
+    border-radius: 10px;
+    border-color: #c5013b;
+
+
+  }
+  .input{
+    border: 5px;
+    border-radius: 10px;
+    border-color: #ccc5c7;
+  }
+
+.errovalid{
+  color: #ff0000;
+   font-weight: bold;
+   font-size: 15px;
+}
+.valid{
+  color: #f29b00;
+   font-size: 12px;
+}
+.labelselect{
+  padding-top: 20px;
+  width: 50%;
+}
+.smallinfo{
+  font-size: 10px;
+  color: #b5b5b5;
+}
+
+}

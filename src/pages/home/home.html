@@ -1,0 +1,112 @@
+
+<ion-header>
+  <ion-toolbar color="serviceheader">
+    <ion-buttons end>
+      <button ion-button menuToggle>
+        <ion-icon name="ios-basket-outline"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-searchbar [animated]="true" placeholder="o que você precisa?" (ionInput)="getItems($event)"></ion-searchbar>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content  class="home" >
+  <div class="" *ngIf="items && cats ">
+
+
+    <img-loader src="" (load)="onImageLoad($event)" useImg [spinner]="true"></img-loader>
+
+
+    <div *ngIf="tem" class="itemsearch">
+
+      <ion-item class=""  *ngFor="let item of items">
+        <div (click)="openserv(item)" class="">
+          {{ item.nome }}
+        </div>
+      </ion-item>
+    </div>
+    <div [ngClass]="{'blur': tem ,'home': !tem }" class="blur">
+
+
+      <div class="slide">
+        <ion-slides autoplayDisableOnInteraction="false"  autoplay="2000" loop="true" speed="1000" pager>
+
+          <ion-slide >
+            <img src="assets/slide.jpg" alt="">
+          </ion-slide>
+
+          <ion-slide >
+            <img src="assets/slide2.jpg" alt="">
+          </ion-slide>
+          <ion-slide >
+            <img src="assets/slide3.jpg" alt="">
+          </ion-slide>
+
+        </ion-slides>
+
+      </div>
+
+      <div align="center" class="novas">
+        Novas Categorias
+
+      </div>
+      <div class="" *ngFor="let item of cats  | slice:0:3; let i=index" >
+        <img-loader (click)="animateElem(servicos,item )"  src="{{item.imgdest}}" (load)="onImageLoad($event)" useImg [spinner]="true"></img-loader>
+
+      </div>
+      <!--<div align="center" class=" lojaspatro">
+        Lojas Oficiais
+
+      </div>
+      <div class="slidepatro">
+        <ion-slides padding paginationType autoplay="3000" loop spaceBetween="10" slidesPerView="3">
+          <ion-slide >
+            <img src="assets/slideb1.png" alt="">
+          </ion-slide>
+
+          <ion-slide >
+            <img src="assets/slideb2.png" alt="">
+          </ion-slide>
+          <ion-slide >
+            <img src="assets/slideb3.png" alt="">
+          </ion-slide>
+          <ion-slide >
+            <img src=" assets/slideb4.png" alt="">
+          </ion-slide>
+          <ion-slide >
+            <img src="assets/slideb5.png" alt="">
+          </ion-slide>
+
+        </ion-slides>
+
+      </div>
+    -->
+      <div align="center" class="geral">
+        Todas as categorias
+
+      </div>
+
+      <div class="" *ngFor="let item of cats | slice:3:10; let i=index" >
+        <img-loader (click)="animateElem(servicos,item )"  src="{{item.imgdest}}" (load)="onImageLoad($event)" useImg [spinner]="true"></img-loader>
+
+      </div>
+
+      <img (click)="indique()" src="assets/marketingsale.jpg" alt="">
+
+
+      <div class="" *ngFor="let item of cats | slice:10; let i=index" >
+        <img-loader (click)="animateElem(servicos,item )"  src="{{item.imgdest}}" (load)="onImageLoad($event)" useImg [spinner]="true"></img-loader>
+
+      </div>
+
+    </div>
+  </div>
+  <div align="center" *ngIf="!items && !cats || noconect" class="">
+          <img (click)="reload()" src="assets/noconnection.png" alt="">
+          <button ion-button small  name="button" (click)="reload()">Atualizar</button>
+
+
+  </div>
+
+</ion-content>

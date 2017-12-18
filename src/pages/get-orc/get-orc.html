@@ -1,0 +1,131 @@
+
+<ion-header>
+  <ion-toolbar color="notificacao">
+    <ion-buttons start>
+      <button ion-button menuToggle>
+        <ion-icon name="options"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>Orçamentos</ion-title>
+ 
+
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content >
+
+
+
+  <div class="segments" >
+
+    <ion-segment [(ngModel)]="pet">
+      <ion-segment-button (ionSelect)="getOrc()" value="kittens">
+        Recebidos
+      </ion-segment-button>
+      <ion-segment-button (ionSelect)="getSol()" value="puppies">
+        Solicitados
+      </ion-segment-button>
+      <ion-segment-button color="homeheader" (ionSelect)="getaccept()" value="accept">
+        Aceitos
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+
+  <div [ngSwitch]="pet">
+
+    <ion-list *ngSwitchCase="'kittens'">
+      <div class="titgetorc">
+        Recebidos pelo Fornecedor
+
+      </div>
+      <ion-list>
+        <ion-item (click)="openOrc(item)" *ngFor="let item of orcs let i = index">
+          <ion-thumbnail  item-end>
+            <img src="assets/recebido.png">
+          </ion-thumbnail >
+          <h3 class="titulolist">{{i+1}}. {{item.nome}} </h3>
+
+          <ion-row class="detalhescols">
+            <ion-col >
+              Status: <span class="statusaccept">Pendente</span>
+            </ion-col>
+            <ion-col >
+              Data: <span class="statusaccept">{{item.data | date: 'dd/MM/yyyy'}}</span>
+            </ion-col>
+            <ion-col >
+              Cod: <span class="statusaccept">#{{item.id_solicitacao_orcamento}}</span>
+            </ion-col>
+          </ion-row>
+        </ion-item>
+      </ion-list>
+
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'puppies'">
+<div class="titgetorc">
+  Enviado para o Fornecedor
+
+</div>
+      <ion-list>
+        <ion-item (click)="openOrc(item)" *ngFor="let item of solics let i = index">
+
+          <ion-thumbnail  item-end>
+            <img src="assets/pendente.png">
+          </ion-thumbnail >
+          <h3 class="titulolist">{{i+1}}. {{item.nome}}</h3>
+
+          <ion-row class="detalhescols">
+            <ion-col >
+              Status: <span class="statusaccept">Aberto</span>
+            </ion-col>
+            <ion-col >
+              Data: <span class="statusaccept">{{item.data | date: 'dd/MM/yyyy'}}</span>
+            </ion-col>
+            <ion-col>
+
+            </ion-col>
+          </ion-row>
+        </ion-item>
+      </ion-list>
+
+
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'accept'">
+      <div class="titgetorc">
+        Pedidos aceitos por você
+
+      </div>
+      <ion-list>
+        <ion-item (click)="openP(item)" *ngFor="let item of accepts let i = index">
+          <ion-thumbnail  item-end>
+            <img src="assets/checked.png">
+          </ion-thumbnail >
+
+          <h3 class="titulolist">{{i+1}}. {{item.nome}} </h3>
+
+          <ion-row class="detalhescols">
+            <ion-col >
+              Status: <span class="statusaccept">Aceito</span>
+            </ion-col>
+            <ion-col >
+              Data: <span class="statusaccept">{{item.data | date: 'dd/MM/yyyy'}}</span>
+            </ion-col>
+            <ion-col >
+              Cod: <span class="statusaccept">#{{item.cod_solicitacao_orcamento}}</span>
+            </ion-col>
+            <ion-col>
+
+            </ion-col>
+          </ion-row>
+        </ion-item>
+      </ion-list>
+
+
+
+
+    </ion-list>
+  </div>
+
+</ion-content>
