@@ -34,8 +34,8 @@ import { Ionic2RatingModule } from 'ionic2-rating';
 import {AvaliacaoPage} from '../pages/avaliacao/avaliacao';
 import { IonicImageLoader } from 'ionic-image-loader';
 import {IndiquePage} from '../pages/indique/indique';
-import { GoogleAnalytics } from '@ionic-native/google-analytics';
-import { NativePageTransitions, NativeTransitionOptions } from '@ionic-native/native-page-transitions';
+import { Ng2OrderModule } from 'ng2-order-pipe';
+
 
 
 @NgModule({
@@ -62,6 +62,7 @@ NotificacaoPage,
     ViewOrcPage
   ],
   imports: [
+    Ng2OrderModule,
 
     Ionic2RatingModule,
     HttpModule,
@@ -92,8 +93,8 @@ NotificacaoPage,
     ViewOrcPage
   ],
   providers: [
-    NativePageTransitions,
-    GoogleAnalytics,
+
+
     Camera,
     Geolocation,
     CallNumber,

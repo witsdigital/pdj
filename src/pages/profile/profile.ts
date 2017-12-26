@@ -43,7 +43,7 @@ dadosimg:any= {};
     this.getaccept();
   }
   share(){
-    this.socialSharing.share("Precisando de um profissional pra te dar uma forcinha? Baixe agora o aplicativo ServiçoStore",null/*Subject*/,null/*File*/,"http://www.google.com")
+    this.socialSharing.share("Precisando de um profissional pra te dar uma forcinha? Baixe agora o aplicativo ServiçoStore",null/*Subject*/,null/*File*/,"http://servico.store")
 
     .then(() => {
   // Sharing via email is possible

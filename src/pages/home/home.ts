@@ -7,8 +7,6 @@ import { Network } from '@ionic-native/network';
 import { ImgLoader,ImageLoaderConfig } from 'ionic-image-loader';
 import { ImageLoader } from 'ionic-image-loader';
 import { IndiquePage} from '../indique/indique';
-import { GoogleAnalytics } from '@ionic-native/google-analytics';
-import { NativePageTransitions, NativeTransitionOptions } from '@ionic-native/native-page-transitions';
 
 
 
@@ -43,9 +41,9 @@ lista:any[];
  noconect:any;
 
 
-  constructor(private nativePageTransitions: NativePageTransitions, private ga: GoogleAnalytics,public imageLoader: ImageLoader, public imageLoaderConfig: ImageLoaderConfig, public network: Network, public navCtrl: NavController,public modalCtrl: ModalController,public loadingCtrl: LoadingController, public service: ServiceProvider) {
+  constructor(public imageLoader: ImageLoader, public imageLoaderConfig: ImageLoaderConfig, public network: Network, public navCtrl: NavController,public modalCtrl: ModalController,public loadingCtrl: LoadingController, public service: ServiceProvider) {
  this.initializeItems();
- this.getGa();
+
 
 
 
@@ -137,16 +135,6 @@ this.initializeItems();
     }
   }
 
-getGa(){
-  this.ga.startTrackerWithId('UA-46117675-2')
-   .then(() => {
-     console.log('Google analytics is ready now');
-        this.ga.trackView('test');
-     // Tracker is ready
-     // You can now track pages or set additional information such as AppVersion or UserId
-   })
-   .catch(e => console.log('Error starting GoogleAnalytics', e));
-}
 
 
 
@@ -205,17 +193,7 @@ getDestaques(){
   }
 
   animateElem(page: any, dados: any) {
-    let options: NativeTransitionOptions = {
-       direction: 'up',
-       duration: 500,
-       slowdownfactor: 3,
-       slidePixels: 20,
-       iosdelay: 100,
-       androiddelay: 150,
-       fixedPixelsTop: 0,
-       fixedPixelsBottom: 80
-      };
-      this.nativePageTransitions.fade(options);
+
  this.navCtrl.push(page, { cat: dados });
 
   // ;
