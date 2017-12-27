@@ -25,20 +25,6 @@ export class MyApp {
   pages: Array<{title: string, icon: string, component: any}>;
 
   constructor(private oneSignal: OneSignal, private localNotifications: LocalNotifications,public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
-/*
-
-    setInterval(() => {
-
-     this.localNotifications.schedule({
-   id: 1,
-   title: 'Local ILocalNotification Example',
-     text: 'Multi ILocalNotification 2',
-     icon: 'http://example.com/icon.png',
-   sound:'file://sound.mp3'
- });
-
-
-    }, 10000);*/
 
     if(localStorage.getItem('userData')){
       this.dadosUser = JSON.parse(localStorage.getItem('userData'));
