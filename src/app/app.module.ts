@@ -35,11 +35,13 @@ import {AvaliacaoPage} from '../pages/avaliacao/avaliacao';
 import { IonicImageLoader } from 'ionic-image-loader';
 import {IndiquePage} from '../pages/indique/indique';
 import { Ng2OrderModule } from 'ng2-order-pipe';
+import {PreloginPage} from '../pages/prelogin/prelogin';
 
 
 
 @NgModule({
   declarations: [
+    PreloginPage,
     IndiquePage,
     AvaliacaoPage,
     ProfFornPage,
@@ -72,6 +74,7 @@ NotificacaoPage,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
+    PreloginPage,
     IndiquePage,
     AvaliacaoPage,
     LocalizacaoPage,

@@ -10,10 +10,59 @@ page-cad-user {
 
 
   }
+  video {
+  background-color: blue;
+position: fixed;
+opacity: 0.4;
+top: 50%;
+left: -10%;
+min-width: 100%;
+min-height: 100%;
+width: auto;
+height: auto;
+z-index: -100;
+transform: translateX(-50%) translateY(-50%);
+}
   .input{
     border: 5px;
     border-radius: 10px;
     border-color: #ccc5c7;
+  }
+  .login{
+
+
+
+  }
+  .slide01{
+        background-image: url('../assets/bgcad.png');
+  }
+  .slide02{
+        background-image: url('../assets/bgcad02.png');
+  }
+  .slide03{
+        background-image: url('../assets/bgcad03.png');
+  }
+  .btnprox{
+    width: 70%;
+    margin-top: 10px;
+
+  }
+  .iconnext{
+    width: 20%;
+  }
+  .btnclose{
+    z-index: 99999;
+    font-size: 40px;
+    color: #fff;
+    position: absolute;
+    top: 5%;
+    left: 83%;
+  }
+  .formmax{
+    .item{
+      padding: 10px;
+    }
+    margin-top: 1%;
   }
 
 .errovalid{
@@ -24,6 +73,11 @@ page-cad-user {
 .valid{
   color: #f29b00;
    font-size: 12px;
+}
+.item{
+  color: #fff;
+  background: none;
+  padding: 5%;
 }
 .labelselect{
   padding-top: 20px;

@@ -1,25 +1,19 @@
-<ion-header>
-  <ion-toolbar color="orangeespec">
-
-    <ion-title>Novo Cadastro</ion-title>
-    <ion-buttons end>
-      <button (click)="close()" ion-button icon-only color="royal">
-        Fechar <ion-icon name="close"></ion-icon>
-      </button>
-    </ion-buttons>
-  </ion-toolbar>
-</ion-header>
 
 
-<ion-content padding>
 
-  <ion-list>
+<ion-content  class="login">
 
+
+
+  <div (click)="close()"  class="btnclose">
+ <ion-icon name="ios-close"></ion-icon>
+  </div>
+  <ion-slides>
+  <ion-slide class="slide01" >
     <ion-item>
       <ion-label  floating [ngClass]="{'errovalid': !name.valid || (name.dirty || name.touched),'valid': name.valid }">Nome *</ion-label>
       <ion-input  [(ngModel)]="cadastro.nome"  #name="ngModel" type="text" required></ion-input>
     </ion-item>
-
     <ion-item>
       <ion-label  floating [ngClass]="{'errovalid': !email.valid,'valid': email.valid }">Email *</ion-label>
       <ion-input class="imput"  [(ngModel)]="cadastro.email"  #email="ngModel" type="email" email required></ion-input>
@@ -30,57 +24,76 @@
       <ion-input class="imput"  [(ngModel)]="cadastro.telefone"  #telefone="ngModel" type="telefone" required></ion-input>
     </ion-item>
 
-    <ion-item>
-      <ion-label  floating [ngClass]="{'errovalid': !cpf.valid,'valid': cpf.valid }">CPF *</ion-label>
-      <ion-input class="imput"  [(ngModel)]="cadastro.cpf" maxlength="11" minlength="11" #cpf="ngModel" type="cpf" required></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label  floating [ngClass]="{'errovalid': !login.valid,'valid': login.valid }">Login *</ion-label>
-      <ion-input class="imput"  [(ngModel)]="cadastro.login"  #login="ngModel" type="login" required></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label  floating [ngClass]="{'errovalid': !senha.valid,'valid': senha.valid }">Senha *</ion-label>
-      <ion-input class="imput"  [(ngModel)]="cadastro.senha" t  #senha="ngModel" minlength="6" type="password" required></ion-input>
+    <button class="btnprox" [disabled]="email.invalid || name.invalid ||telefone.invalid"  ion-button color="secondary" (click)="next(1)" round>Próximo</button>
 
-    </ion-item>
-        <span class="smallinfo">Mínimo de 6 caracteres</span>
 
+  </ion-slide>
+  <ion-slide class="slide02" >
 
         <ion-item>
-          <ion-label  floating [ngClass]="{'errovalid': !endereco.valid,'valid': endereco.valid }">Endereço *</ion-label>
-          <ion-input class="imput"  [(ngModel)]="cadastro.endereco"  #endereco="ngModel" type="text" required></ion-input>
+          <ion-label  floating [ngClass]="{'errovalid': !cpf.valid,'valid': cpf.valid }">CPF *</ion-label>
+          <ion-input class="imput"  [(ngModel)]="cadastro.cpf" maxlength="11" minlength="11" #cpf="ngModel" type="cpf" required></ion-input>
         </ion-item>
-    <ion-item>
-      <ion-label  floating [ngClass]="{'errovalid': !numero.valid,'valid': numero.valid }">Número *</ion-label>
-      <ion-input class="imput"  [(ngModel)]="cadastro.numero"  #numero="ngModel" type="numero" required></ion-input>
-    </ion-item>
+        <ion-item>
+          <ion-label  floating [ngClass]="{'errovalid': !login.valid,'valid': login.valid }">Login *</ion-label>
+          <ion-input class="imput"  [(ngModel)]="cadastro.login"  #login="ngModel" type="login" required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label  floating [ngClass]="{'errovalid': !senha.valid,'valid': senha.valid }">Senha *</ion-label>
+          <ion-input class="imput"  [(ngModel)]="cadastro.senha" t  #senha="ngModel" minlength="6" type="password" required></ion-input>
 
+        </ion-item>
+            <span class="smallinfo">Mínimo de 6 caracteres</span><br>
+                <button  class="btnprox"   ion-button color="secondary" (click)="next(2)" round>Próximo</button>
+  </ion-slide>
+  <ion-slide class="formmax slide03">
     <ion-item>
-      <ion-label  floating [ngClass]="{'errovalid': !bairro.valid,'valid': bairro.valid }">Bairro *</ion-label>
-      <ion-input class="imput"  [(ngModel)]="cadastro.bairro"  #bairro="ngModel" type="bairro" required></ion-input>
+      <ion-label  floating [ngClass]="{'errovalid': !endereco.valid,'valid': endereco.valid }">Endereço *</ion-label>
+      <ion-input class="imput"  [(ngModel)]="cadastro.endereco"  #endereco="ngModel" type="text" required></ion-input>
     </ion-item>
-    <ion-item>
-    <ion-label class="labelselect"   [ngClass]="{'errovalid': !cidade.valid,'valid': cidade.valid }">Cidade *</ion-label>
-      <ion-select required   [(ngModel)]="cadastro.cidade"  #cidade="ngModel">
-        <ion-option *ngFor="let item of cidades" value="{{item.id}}">{{item.nome}}</ion-option>
+<ion-item>
+  <ion-label  floating [ngClass]="{'errovalid': !numero.valid,'valid': numero.valid }">Número *</ion-label>
+  <ion-input class="imput"  [(ngModel)]="cadastro.numero"  #numero="ngModel" type="numero" required></ion-input>
+</ion-item>
 
-      </ion-select>
-    </ion-item>
+<ion-item>
+  <ion-label  floating [ngClass]="{'errovalid': !bairro.valid,'valid': bairro.valid }">Bairro *</ion-label>
+  <ion-input class="imput"  [(ngModel)]="cadastro.bairro"  #bairro="ngModel" type="bairro" required></ion-input>
+</ion-item>
+<ion-item>
+<ion-label class="labelselect"   [ngClass]="{'errovalid': !cidade.valid,'valid': cidade.valid }">Cidade *</ion-label>
+  <ion-select required   [(ngModel)]="cadastro.cidade"  #cidade="ngModel">
+    <ion-option *ngFor="let item of cidades" value="{{item.id}}">{{item.nome}}</ion-option>
 
-    <ion-item>
-    <ion-label class="labelselect"   [ngClass]="{'errovalid': !estado.valid,'valid': estado.valid }">estado *</ion-label>
-      <ion-select class="inputselect" required   [(ngModel)]="cadastro.estado"  #estado="ngModel">
-        <ion-option  value="BA">BA</ion-option>
+  </ion-select>
+</ion-item>
 
-      </ion-select>
-    </ion-item>
+<ion-item>
+<ion-label class="labelselect"   [ngClass]="{'errovalid': !estado.valid,'valid': estado.valid }">estado *</ion-label>
+  <ion-select class="inputselect" required   [(ngModel)]="cadastro.estado"  #estado="ngModel">
+    <ion-option  value="BA">BA</ion-option>
+
+  </ion-select>
+</ion-item>
+<button  class="btnprox"   ion-button color="secondary" (click)="next(2)" round>Finalizar cadastro</button>
+  </ion-slide>
+</ion-slides>
+
+  <ion-list>
+
+
+
+
+
+
+
 
 
   </ion-list>
 
-  <div class="buttons" >
+  <!-- <div class="buttons" >
     <button  ion-button color="secondary" [disabled]="email.invalid || name.invalid ||bairro.invalid || cpf.invalid || login.invalid || senha.invalid || telefone.invalid || estado.invalid || cidade.invalid" block (click)="salvar(cadastro)"   >Criar minha conta</button>
 
-  </div>
+  </div> -->
 
 </ion-content>

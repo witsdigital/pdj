@@ -21,7 +21,7 @@ page-profile {
 }
 .starreput{
   position: relative;
-  margin-top: 30%;
+  margin-top: 15%;
   margin-left: 20px;
 
 
@@ -29,24 +29,28 @@ page-profile {
 .starreputtit{
   position: absolute;
     margin-left: 9%;
-    margin-top: 8%;
+    margin-top: 5%;
   color:#FFF;
 
 
 
 }
 
-.bteditimg{
 
-  position: absolute;
-  font-weight: bold;
-font-size: 18px;
-  margin-left: 70%;
-top: 30%;
-color:#ccc;
-  z-index: 99999;
-}
 .circle {
+  .bteditimg{
+margin-left: 33%;
+margin-top: 33%;
+
+
+    position: absolute;
+    font-weight: bold;
+  font-size: 18px;
+
+  top: 10%;
+  color:#fff;
+    z-index: 99999;
+  }
   background-color: #aaa;
   border-radius: 50%;
   width: 120px;

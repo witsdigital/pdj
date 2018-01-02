@@ -4,7 +4,7 @@
 
 </ion-header>
 <ion-content class="content"  >
-      <p (click)="editarimg()" class="bteditimg">Editar</p>
+
   <div class="headerprof">
 
   <div class="infoprofile">
@@ -14,6 +14,7 @@
   </div>
 
   <div class="circle">
+      <p (click)="editarimg()" class="bteditimg">Editar</p>
     <img *ngIf="!imglist[0]"  src="{{dadosUser[0].img}}" alt="">
     <img *ngIf="imglist[0]"  class=""  src="{{base64Image}}" alt="">
   </div>

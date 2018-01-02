@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component,ViewChild  } from '@angular/core';
 import {  NavController, NavParams,ViewController,ToastController } from 'ionic-angular';
 import {ServiceProvider} from '../../providers/service/service';
 import {LoginPage} from '../login/login';
+import { Slides } from 'ionic-angular';
 /**
  * Generated class for the CadUserPage page.
  *
@@ -14,7 +15,7 @@ import {LoginPage} from '../login/login';
   templateUrl: 'cad-user.html',
 })
 export class CadUserPage {
-
+ @ViewChild(Slides) slides: Slides;
 
   cadastro:any = {};
   cidades:any;
@@ -32,8 +33,16 @@ dadospush:any;
 
   }
 
+  next(dados){
+     this.slides.lockSwipeToNext(false);
+     this.slides.slideTo(dados, 500);
+          this.slides.lockSwipeToNext(true);
+
+  }
+
   ionViewDidLoad() {
-    console.log('ionViewDidLoad CadUserPage');
+ this.slides.lockSwipeToNext(true);
+
   }
   close(){
     this.viewCtrl.dismiss();

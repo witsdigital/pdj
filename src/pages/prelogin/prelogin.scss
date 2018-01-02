@@ -1,0 +1,173 @@
+page-prelogin {
+
+
+
+    .arrows0 {
+    	width: 60px;
+    	height: 72px;
+    	position: absolute;
+    	left: 20%;
+      top: 30%;
+    	margin-left: -30px;
+    	bottom: 20px;
+        -webkit-transform: rotate(90deg);
+    }
+
+    .arrows0 path {
+    	stroke: #01ff5e;
+    	fill: transparent;
+    	stroke-width: 1px;
+    	animation: arrow 2s infinite;
+    	-webkit-animation: arrow 2s infinite;
+    }
+
+    @keyframes arrow
+    {
+    0% {opacity:0}
+    40% {opacity:1}
+    80% {opacity:0}
+    100% {opacity:0}
+    }
+
+    @-webkit-keyframes arrow /*Safari and Chrome*/
+    {
+    0% {opacity:0}
+    40% {opacity:1}
+    80% {opacity:0}
+    100% {opacity:0}
+    }
+
+    .arrows0 path.a1 {
+    	animation-delay:-1s;
+    	-webkit-animation-delay:-1s; /* Safari 和 Chrome */
+    }
+
+    .arrows0 path.a2 {
+    	animation-delay:-0.5s;
+    	-webkit-animation-delay:-0.5s; /* Safari 和 Chrome */
+    }
+
+    .arrows0 path.a3 {
+    	animation-delay:0s;
+    	-webkit-animation-delay:0s; /* Safari 和 Chrome */
+    }
+
+
+
+
+
+
+
+  .arrows {
+  	width: 60px;
+  	height: 72px;
+  	position: absolute;
+  	left: 80%;
+    top: 30%;
+  	margin-left: -30px;
+  	bottom: 20px;
+      -webkit-transform: rotate(-90deg);
+  }
+
+  .arrows path {
+  	stroke: #01ff5e;
+  	fill: transparent;
+  	stroke-width: 1px;
+  	animation: arrow 2s infinite;
+  	-webkit-animation: arrow 2s infinite;
+  }
+
+  @keyframes arrow
+  {
+  0% {opacity:0}
+  40% {opacity:1}
+  80% {opacity:0}
+  100% {opacity:0}
+  }
+
+  @-webkit-keyframes arrow /*Safari and Chrome*/
+  {
+  0% {opacity:0}
+  40% {opacity:1}
+  80% {opacity:0}
+  100% {opacity:0}
+  }
+
+  .arrows path.a1 {
+  	animation-delay:-1s;
+  	-webkit-animation-delay:-1s; /* Safari 和 Chrome */
+  }
+
+  .arrows path.a2 {
+  	animation-delay:-0.5s;
+  	-webkit-animation-delay:-0.5s; /* Safari 和 Chrome */
+  }
+
+  .arrows path.a3 {
+  	animation-delay:0s;
+  	-webkit-animation-delay:0s; /* Safari 和 Chrome */
+  }
+
+
+
+
+.boxoption{
+  position: absolute;
+  top: 85%;
+  right:10%;
+  left:10%;
+}
+.slide{
+
+  margin-top: 45%;
+    width: 100%;
+    height: 50%;
+}
+.iconslide{
+  width: 55%;
+  padding: 30px;
+}
+
+    .logo{
+      position: absolute;
+      left: 65%;
+
+      width: 30%;
+
+
+    }
+    .slide1{
+      font-size: 15px;
+      color: #fff;
+      padding: 20px;
+    }
+    .btcreate{
+      width: 100%;
+      background-color: #01ff5e;
+      color: black;
+    }
+    .btlogin{
+      background-color: #a751c3;
+      width: 100%;
+
+    }
+
+    .toast{
+      background-color: red;
+       text-align:center;
+    }
+
+
+        .login{
+          background-image: url('../assets/bglprelogin.png');
+
+
+        }
+
+
+  }
+  .toast-error {
+  > div{
+       background-color:#ff0000!important;
+   }
+}

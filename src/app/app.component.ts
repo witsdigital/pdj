@@ -7,6 +7,7 @@ import { OneSignal } from '@ionic-native/onesignal';
 import {TabsPage} from '../pages/tabs/tabs';
 import {LocalizacaoPage} from '../pages/localizacao/localizacao';
 import {LoginPage} from '../pages/login/login';
+import {PreloginPage} from '../pages/prelogin/prelogin';
 
 @Component({
   templateUrl: 'app.html'
@@ -19,7 +20,8 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
 //  rootPage: any = LocalizacaoPage;
-  rootPage: any = LoginPage;
+  rootPage: any = PreloginPage;
+//  rootPage: any = LoginPage;
 //  rootPage: any = TabsPage;
 
   pages: Array<{title: string, icon: string, component: any}>;

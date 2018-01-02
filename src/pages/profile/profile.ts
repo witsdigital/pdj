@@ -5,6 +5,7 @@ import {LoginPage} from '../login/login';
 import {UpdatePassPage} from '../update-pass/update-pass';
 import {ServiceProvider} from '../../providers/service/service';
 import { Camera, CameraOptions } from '@ionic-native/camera';
+import {TabsPage} from '../tabs/tabs';
 
 @Component({
   selector: 'page-profile',
@@ -24,7 +25,10 @@ imglist:any=[];
 dadosimg:any= {};
 
   constructor(public actionSheetCtrl: ActionSheetController,private camera: Camera, public service: ServiceProvider, public modal: ModalController, public app:  App, public loadingCtrl:LoadingController, private socialSharing: SocialSharing, public navCtrl: NavController, public navParams: NavParams) {
+    if(localStorage.getItem('bd_servico')){
+       this.navCtrl.push(TabsPage);
 
+    }
 
  this.tabBarElement = document.querySelector('#tabs ion-tabbar-section');
     if(localStorage.getItem('bd_servico')){
@@ -121,10 +125,9 @@ this.dadosimg.user = this.dadosUser[0].id_usuario;
 this.dadosimg.img = this.base64Image;
 
 this.service.upFoto(this.dadosimg).then((data)=>{
-  console.log(data);
     this.base64Image = '';
     this.dadosimg = {};
-  alert(data);
+
 });
 
     }
