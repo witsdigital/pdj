@@ -36,7 +36,8 @@ import { IonicImageLoader } from 'ionic-image-loader';
 import {IndiquePage} from '../pages/indique/indique';
 import { Ng2OrderModule } from 'ng2-order-pipe';
 import {PreloginPage} from '../pages/prelogin/prelogin';
-
+import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer';
+import { File } from '@ionic-native/file';
 
 
 @NgModule({
@@ -96,7 +97,7 @@ NotificacaoPage,
     ViewOrcPage
   ],
   providers: [
-
+FileTransfer,
 
     Camera,
     Geolocation,

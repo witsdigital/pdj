@@ -4,6 +4,8 @@ import {ServiceProvider} from '../../providers/service/service';
 import {TabsPage} from '../tabs/tabs';
 import { Camera, CameraOptions } from '@ionic-native/camera';
 import { ActionSheetController } from 'ionic-angular';
+import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer';
+import { File } from '@ionic-native/file';
 
 /**
  * Generated class for the OrcamentoPage page.
@@ -25,8 +27,9 @@ export class OrcamentoPage {
   mensage:any;
   base64Image:any;
   imglist:any=[];
+  imageFileName:any;
 
-  constructor(public loadingCtrl: LoadingController, public actionSheetCtrl: ActionSheetController, private camera: Camera, public navCtrl: NavController,public toastCtrl:ToastController, public service : ServiceProvider, public navParams: NavParams, public viewCtrl: ViewController) {
+  constructor( private transfer: FileTransfer,public loadingCtrl: LoadingController, public actionSheetCtrl: ActionSheetController, private camera: Camera, public navCtrl: NavController,public toastCtrl:ToastController, public service : ServiceProvider, public navParams: NavParams, public viewCtrl: ViewController) {
     this.ct = this.navParams.get('ct');
   }
 
@@ -60,7 +63,42 @@ export class OrcamentoPage {
     }
 
 
+    uploadFile(idsol) {
+      let loader = this.loadingCtrl.create({
+        content: "Uploading..."
+      });
+      loader.present();
+      const fileTransfer: FileTransferObject = this.transfer.create();
 
+      let options: FileUploadOptions = {
+        fileKey: 'ionicfile',
+        fileName: 'ionicfile',
+        chunkedMode: false,
+        mimeType: "image/jpeg",
+        headers: {}
+      }
+
+      fileTransfer.upload(this.imglist[0], 'http://meupainel.com.br/service/orcamentos/newup', options)
+        .then((data) => {
+
+
+
+        console.log(data+" Uploaded Successfully");
+
+        loader.dismiss();
+
+      }, (err) => {
+        console.log(err);
+        loader.dismiss();
+
+      });
+
+      // this.service.saveimg(this.imglist).then((data)=>{
+      //
+      // });
+
+
+    }
 
 
   addfoto(type){
@@ -101,11 +139,12 @@ this.imglist.splice(index, 1); // remove o item do determinado indice
 
     this.ct.descricao = dados.descricao;
     this.ct.dataexecut = dados.dataexecut;
-this.ct.imgs = this.imglist;
 this.service.postOrc(this.ct).then((result)=>{
+
   console.log(result);
   this.mensage = result;
   if(this.mensage.mensage == 1){
+      this.uploadFile(this.mensage.id_solic_orc);
     let toast = this.toastCtrl.create({
       message: 'Orçamento solicitado com sucesso',
       duration: 3000,
