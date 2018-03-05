@@ -25,10 +25,7 @@ imglist:any=[];
 dadosimg:any= {};
 
   constructor(public actionSheetCtrl: ActionSheetController,private camera: Camera, public service: ServiceProvider, public modal: ModalController, public app:  App, public loadingCtrl:LoadingController, private socialSharing: SocialSharing, public navCtrl: NavController, public navParams: NavParams) {
-    if(localStorage.getItem('bd_servico')){
-       this.navCtrl.push(TabsPage);
 
-    }
 
  this.tabBarElement = document.querySelector('#tabs ion-tabbar-section');
     if(localStorage.getItem('bd_servico')){

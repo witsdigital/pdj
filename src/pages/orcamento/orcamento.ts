@@ -25,6 +25,7 @@ export class OrcamentoPage {
   endenew:any= [];
   dadosUser:any;
   mensage:any;
+  msgimg:any;
   base64Image:any;
   imglist:any=[];
   imageFileName:any;
@@ -64,38 +65,44 @@ export class OrcamentoPage {
 
 
     uploadFile(idsol) {
-      let loader = this.loadingCtrl.create({
-        content: "Uploading..."
-      });
-      loader.present();
       const fileTransfer: FileTransferObject = this.transfer.create();
 
-      let options: FileUploadOptions = {
-        fileKey: 'ionicfile',
-        fileName: 'ionicfile',
-        chunkedMode: false,
-        mimeType: "image/jpeg",
-        headers: {}
-      }
 
-      fileTransfer.upload(this.imglist[0], 'http://meupainel.com.br/service/orcamentos/newup', options)
+      let dnow = Date.now()+this.dadosUser[0].id_usuario;
+      let dadosup:any={};
+      for(let i = 0; i<this.imglist.length; i++){
+
+        let options: FileUploadOptions = {
+          fileKey: 'ionicfile',
+          fileName: 'img_'+dnow+i,
+          chunkedMode: false,
+          mimeType: "image/jpeg",
+          headers: {}
+        }
+
+      fileTransfer.upload(this.imglist[i], 'http://meupainel.com.br/service/orcamentos/newup', options)
         .then((data) => {
+          this.msgimg = data;
+          console.log(data);
+          dadosup.img = 'img_'+dnow+i;
+          dadosup.id = idsol;
+          dadosup.caminho = 'uploads/';
+          this.service.saveimg(dadosup).then((data)=>{
+          console.log(data);
+          });
 
 
 
-        console.log(data+" Uploaded Successfully");
-
-        loader.dismiss();
 
       }, (err) => {
-        console.log(err);
-        loader.dismiss();
+        console.log('erro '+err);
+
 
       });
+  }
 
-      // this.service.saveimg(this.imglist).then((data)=>{
-      //
-      // });
+
+
 
 
     }
@@ -141,7 +148,7 @@ this.imglist.splice(index, 1); // remove o item do determinado indice
     this.ct.dataexecut = dados.dataexecut;
 this.service.postOrc(this.ct).then((result)=>{
 
-  console.log(result);
+  //console.log(result);
   this.mensage = result;
   if(this.mensage.mensage == 1){
       this.uploadFile(this.mensage.id_solic_orc);

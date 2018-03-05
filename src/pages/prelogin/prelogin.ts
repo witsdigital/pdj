@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
 import {CadUserPage} from '../cad-user/cad-user';
 import {LoginPage} from '../login/login';
+import {TabsPage} from '../tabs/tabs';
 /**
  * Generated class for the PreloginPage page.
  *
@@ -17,6 +18,10 @@ import {LoginPage} from '../login/login';
 export class PreloginPage {
 
   constructor(public modalCtrl:ModalController, public navCtrl: NavController, public navParams: NavParams) {
+    if(localStorage.getItem('bd_servico')){
+       this.navCtrl.push(TabsPage);
+
+    }
   }
 
   ionViewDidLoad() {
